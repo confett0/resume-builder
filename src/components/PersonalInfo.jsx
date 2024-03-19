@@ -1,19 +1,4 @@
-import { useState } from "react";
-
-export default function PersonalInfoForm() {
-  const [personalInfo, setPersonalInfo] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-  });
-
-  const handleChange = (e) => {
-    setPersonalInfo({
-      ...personalInfo,
-      [e.target.name]: e.target.value,
-    });
-  };
+export default function PersonalInfoForm({ personalInfo, handleChange }) {
 
   return (
     <>
