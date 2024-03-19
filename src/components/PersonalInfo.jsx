@@ -3,18 +3,10 @@ export default function PersonalInfoForm({ personalInfo, handleChange }) {
   return (
     <>
       <label>
-        First Name: 
+        Full Name: 
         <input
-          value={personalInfo.firstName}
-          name="firstName"
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Last Name: 
-        <input
-          value={personalInfo.lastName}
-          name="lastName"
+          value={personalInfo.fullName}
+          name="fullName"
           onChange={handleChange}
         />
       </label>
@@ -31,6 +23,14 @@ export default function PersonalInfoForm({ personalInfo, handleChange }) {
         <input
           value={personalInfo.phoneNumber}
           name="phoneNumber"
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Location: 
+        <input
+          value={personalInfo.location}
+          name="location"
           onChange={handleChange}
         />
       </label>

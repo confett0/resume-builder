@@ -6,10 +6,10 @@ import CVRender from "./components/CVRender";
 function App() {
 
   const [personalInfo, setPersonalInfo] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phoneNumber: "",
+    location: "",
   });
 
   const handleChange = (e) => {
