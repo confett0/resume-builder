@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./styles/App.css";
 import Section from "./components/Section";
 import PersonalInfoForm from "./components/PersonalInfo";
+import EducationForm from "./components/Education";
+import WorkForm from "./components/WorkExperience";
 import CVRender from "./components/CVRender";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
           handleChange={handleChange}
         />
       </Section>
+      <EducationForm />
+      <WorkForm />
       <CVRender personalInfo={personalInfo} />
     </>
   );

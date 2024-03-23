@@ -2,6 +2,7 @@ export default function PersonalInfoForm({ personalInfo, handleChange }) {
 
   return (
     <>
+    <form>
       <label>
         Full Name: 
         <input
@@ -34,6 +35,7 @@ export default function PersonalInfoForm({ personalInfo, handleChange }) {
           onChange={handleChange}
         />
       </label>
+      </form>
     </>
   );
 }

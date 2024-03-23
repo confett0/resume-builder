@@ -1,21 +1,22 @@
 export default function WorkForm(){
     return (
         <>
+        <form>
         <label>
         Company Name: 
         <input
-          value={}
+          // value={}
           name="company"
-          onChange={}
+          // onChange={}
           placeholder="Enter Company Name"
         />
       </label>
       <label>
         Position Title: 
         <input
-          value={}
+          //value={}
           name="positionTitle"
-          onChange={}
+          //onChange={}
           placeholder="Enter Position Title"
         
         />
@@ -23,39 +24,40 @@ export default function WorkForm(){
       <label>
         Start Date: 
         <input
-          value={}
+          //value={}
           name="startDate"
-          onChange={}
+          //onChange={}
           placeholder="Enter Start Date"
         />
       </label>
       <label>
         End Date: 
         <input
-          value={}
+          //value={}
           name="endDate"
-          onChange={}
+          //onChange={}
           placeholder="Enter End Date"
         />
       </label>
       <label>
         Location: 
         <input
-          value={}
+          //value={}
           name="location"
-          onChange={}
+          //onChange={}
           placeholder="Enter Location"
         />
       </label>
       <label>
         Description: 
         <textarea
-          value={}
+          //value={}
           name="description"
-          onChange={}
+          //onChange={}
           placeholder="Enter job description"
         />
       </label>
+      </form>
         </>
     )
 }

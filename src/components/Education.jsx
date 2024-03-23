@@ -1,21 +1,22 @@
 export default function EducationForm(){
     return (
         <>
+        <form>
         <label>
         School: 
         <input
-          value={}
+          // value={}
           name="school"
-          onChange={}
+          // onChange={}
           placeholder="Enter school / university"
         />
       </label>
       <label>
         Title: 
         <input
-          value={}
+          // value={}
           name="title"
-          onChange={}
+          // onChange={}
           placeholder="Enter degree / field of study"
         
         />
@@ -23,30 +24,32 @@ export default function EducationForm(){
       <label>
         Start Date: 
         <input
-          value={}
+          // value={}
           name="startDate"
-          onChange={}
+          // onChange={}
           placeholder="Enter Start Date"
         />
       </label>
       <label>
         End Date: 
         <input
-          value={}
+          // value={}
           name="endDate"
-          onChange={}
+          // onChange={}
           placeholder="Enter End Date"
         />
       </label>
       <label>
         Location: 
         <input
-          value={}
+          // value={}
           name="location"
-          onChange={}
+          // onChange={}
           placeholder="Enter Location"
         />
       </label>
+      </form>
         </>
+
     )
 }
