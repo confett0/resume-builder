@@ -7,7 +7,7 @@ export default function Section({ title, children }) {
   return (
     <section className="panel">
       <h2 onClick={toggleSection}>{title}</h2>
-      {isActive ? <p>{ children }</p> : null}
+      {isActive ? <>{ children }</> : null}
     </section>
   );
 }

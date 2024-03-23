@@ -1,11 +1,27 @@
 #root {
-  max-width: 1280px;
+  display: flex;
+  width: 1280px;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+}
+
+.form-wrap {
+  width: 35%;
+}
+
+.CV-render {
+  width: 65%;
 }
 
 form {
   display: flex;
   flex-direction: column;
+}
+
+input, textarea {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0;
+  width: 90%;
 }

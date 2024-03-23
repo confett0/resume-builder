@@ -23,18 +23,20 @@ function App() {
 
   return (
     <>
-      <Section title="Personal Info">
-        <PersonalInfoForm
-          personalInfo={personalInfo}
-          handleChange={handleChange}
-        />
-      </Section>
-      <Section title="Education">
-        <EducationForm />
-      </Section>
-      <Section title="Work Experience">
-        <WorkForm />
-      </Section>
+      <div className="form-wrap">
+        <Section title="Personal Info">
+          <PersonalInfoForm
+            personalInfo={personalInfo}
+            handleChange={handleChange}
+          />
+        </Section>
+        <Section title="Education">
+          <EducationForm />
+        </Section>
+        <Section title="Work Experience">
+          <WorkForm />
+        </Section>
+      </div>
       <CVRender personalInfo={personalInfo} />
     </>
   );
