@@ -29,8 +29,12 @@ function App() {
           handleChange={handleChange}
         />
       </Section>
-      <EducationForm />
-      <WorkForm />
+      <Section title="Education">
+        <EducationForm />
+      </Section>
+      <Section title="Work Experience">
+        <WorkForm />
+      </Section>
       <CVRender personalInfo={personalInfo} />
     </>
   );
