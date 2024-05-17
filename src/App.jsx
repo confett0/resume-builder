@@ -1,10 +1,7 @@
-import { useState } from "react";
-import "./styles/App.css";
-import Section from "./components/Section";
-import PersonalInfoForm from "./components/PersonalInfo";
-import EducationForm from "./components/Education";
-import WorkForm from "./components/WorkExperience";
-import CVRender from "./components/CVRender";
+import { useState } from "react"
+import "./styles/App.css"
+import Sidebar from "./components/Sidebar"
+import CVRender from "./components/CVRender"
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -23,23 +20,12 @@ function App() {
     });
   };
 
-
   return (
     <>
-      <div className="form-wrap">
-        <Section title="Personal Info">
-          <PersonalInfoForm
-            personalInfo={personalInfo}
-            handleChange={handlePersonalInfoChange}
-          />
-        </Section>
-        <Section title="Education">
-          <EducationForm educationList={educationList} />
-        </Section>
-        <Section title="Work Experience">
-          <WorkForm />
-        </Section>
-      </div>
+      <Sidebar
+        personalInfo={personalInfo}
+        handleChange={handlePersonalInfoChange}
+      />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
   );
