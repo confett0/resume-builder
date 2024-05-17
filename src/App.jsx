@@ -14,12 +14,15 @@ function App() {
     location: "",
   });
 
-  const handleChange = (e) => {
+  const [educationList, setEducationList] = useState([]);
+
+  const handlePersonalInfoChange = (e) => {
     setPersonalInfo({
       ...personalInfo,
       [e.target.name]: e.target.value,
     });
   };
+
 
   return (
     <>
@@ -27,17 +30,17 @@ function App() {
         <Section title="Personal Info">
           <PersonalInfoForm
             personalInfo={personalInfo}
-            handleChange={handleChange}
+            handleChange={handlePersonalInfoChange}
           />
         </Section>
         <Section title="Education">
-          <EducationForm />
+          <EducationForm educationList={educationList} />
         </Section>
         <Section title="Work Experience">
           <WorkForm />
         </Section>
       </div>
-      <CVRender personalInfo={personalInfo} />
+      <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
   );
 }

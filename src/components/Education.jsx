@@ -1,11 +1,11 @@
-export default function EducationForm(){
+export default function EducationForm({ educationList, handleSubmit }){
     return (
         <>
-        <form>
+        <form onSubmit={handleSubmit}>
         <label>
         School: 
         <input
-          // value={}
+          value={educationList.school}
           name="school"
           // onChange={}
           placeholder="Enter school / university"
@@ -14,7 +14,7 @@ export default function EducationForm(){
       <label>
         Title: 
         <input
-          // value={}
+          value={educationList.title}
           name="title"
           // onChange={}
           placeholder="Enter degree / field of study"
@@ -48,6 +48,7 @@ export default function EducationForm(){
           placeholder="Enter Location"
         />
       </label>
+      <button type="submit" >Submit</button>
       </form>
         </>
 
