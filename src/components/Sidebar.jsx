@@ -4,20 +4,31 @@ import PersonalInfoForm from "./PersonalInfo"
 import EducationForm from "./Education"
 import WorkForm from "./WorkExperience"
 
-export default function Sidebar({ personalInfo, handleChange}) {
+export default function Sidebar({ personalInfo, handlePersonalInfoChange}) {
 
-    const [educationFormData, setEducationFormData] = useState({})
+    const [educationFormData, setEducationFormData] = useState({
+        id: "",
+        school: "",
+        title: "",
+        startDate: "",
+        endDate: "",
+        location: ""
+      });
+      const handleEducationChange = (e) => {
+        const { name, value } = e.target;
+        setEducationFormData((prevData) => ({ ...prevData, [name]: value }));
+      };
 
     return (
         <div className="sidebar">
         <Section title="Personal Info">
           <PersonalInfoForm
             personalInfo={personalInfo}
-            handleChange={handleChange}
+            handleChange={handlePersonalInfoChange}
           />
         </Section>
         <Section title="Education">
-          <EducationForm />
+          <EducationForm formData={educationFormData} handleChange={handleEducationChange} />
         </Section>
       </div>
     )

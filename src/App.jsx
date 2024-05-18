@@ -24,7 +24,7 @@ function App() {
     <>
       <Sidebar
         personalInfo={personalInfo}
-        handleChange={handlePersonalInfoChange}
+        handlePersonalInfoChange={handlePersonalInfoChange}
       />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
