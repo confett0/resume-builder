@@ -47,6 +47,7 @@ function App() {
       <Sidebar
         personalInfo={personalInfo}
         handlePersonalInfoChange={handlePersonalInfoChange}
+        educationList={educationList}
         addEducation={addEducation}
         deleteEducation={deleteEducation}
       />

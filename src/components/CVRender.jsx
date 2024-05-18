@@ -1,4 +1,4 @@
-export default function CVRender({ personalInfo, educationList, deleteEducation }) {
+export default function CVRender({ personalInfo, educationList }) {
   return (
     <div className="CV-render">
       <h2>Your info</h2>
@@ -13,7 +13,6 @@ export default function CVRender({ personalInfo, educationList, deleteEducation 
           <div key={education.id}>
             <h3>{education.school}</h3>
             <h4>{education.title}</h4>
-            <button onClick={() => deleteEducation(education.id)}>Delete</button>
           </div>
       ))}
       </ul>
