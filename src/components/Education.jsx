@@ -1,8 +1,8 @@
-export default function EducationForm({ formData, handleChange }) {
+export default function EducationForm({ formData, handleChange, handleSubmit }) {
 
   return (
     <>
-      <form /* </>onSubmit={handleSubmit} */>
+      <form onSubmit={handleSubmit} >
         <label>
           School:
           <input

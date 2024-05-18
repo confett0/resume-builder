@@ -13,6 +13,8 @@ function App() {
 
   const [educationList, setEducationList] = useState([]);
 
+  console.log(educationList)
+
   const handlePersonalInfoChange = (e) => {
     setPersonalInfo({
       ...personalInfo,
@@ -20,11 +22,14 @@ function App() {
     });
   };
 
+  const addToList = (newListItem) => setEducationList(prevList => [...prevList, newListItem])
+
   return (
     <>
       <Sidebar
         personalInfo={personalInfo}
         handlePersonalInfoChange={handlePersonalInfoChange}
+        addToList={addToList}
       />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
