@@ -2,7 +2,7 @@ import { useState } from "react"
 import Section from "./Section"
 import PersonalInfoForm from "./PersonalInfo"
 import EducationForm from "./Education"
-import WorkForm from "./WorkExperience"
+// import WorkForm from "./WorkExperience"
 
 export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToList }) {
 
@@ -22,7 +22,8 @@ export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToL
       
       const handleEducationFormSubmit = (e) => {
         e.preventDefault()
-        addToList(educationFormData)
+        const newId = Math.floor(Math.random() * 1000)
+        addToList({...educationFormData, id: newId})
         setEducationFormData({ // research better ways to reset state
             id: "",
             school: "",
