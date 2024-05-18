@@ -1,7 +1,7 @@
-import { useState } from "react"
-import "./styles/App.css"
-import Sidebar from "./components/Sidebar"
-import CVRender from "./components/CVRender"
+import { useState } from "react";
+import "./styles/App.css";
+import Sidebar from "./components/Sidebar";
+import CVRender from "./components/CVRender";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -13,7 +13,7 @@ function App() {
 
   const [educationList, setEducationList] = useState([]);
 
-  console.log(educationList)
+  console.log(educationList);
 
   const handlePersonalInfoChange = (e) => {
     setPersonalInfo({
@@ -22,9 +22,25 @@ function App() {
     });
   };
 
-  const addEducation = (newListItem) => setEducationList(prevList => [...prevList, newListItem])
+  const addEducation = (newListItem) =>
+    setEducationList((prevList) => [...prevList, newListItem]);
 
-  const deleteEducation = (id) => setEducationList(prevList => prevList.filter(item => item.id !== id))
+  const deleteEducation = (id) =>
+    setEducationList((prevList) => prevList.filter((item) => item.id !== id));
+
+  const editEducation = (id, newEducationObj) => {
+    const newEducationList = educationList.map((item) => {
+      if (item.id === id) {
+        return {
+          ...newEducationObj,
+          id: id,
+        };
+      } else {
+        return item;
+      }
+    });
+    setEducationList(newEducationList);
+  };
 
   return (
     <>
@@ -34,7 +50,11 @@ function App() {
         addEducation={addEducation}
         deleteEducation={deleteEducation}
       />
-      <CVRender personalInfo={personalInfo} educationList={educationList} deleteEducation={deleteEducation} />
+      <CVRender
+        personalInfo={personalInfo}
+        educationList={educationList}
+        deleteEducation={deleteEducation}
+      />
     </>
   );
 }
