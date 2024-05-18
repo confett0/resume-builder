@@ -22,16 +22,19 @@ function App() {
     });
   };
 
-  const addToList = (newListItem) => setEducationList(prevList => [...prevList, newListItem])
+  const addEducation = (newListItem) => setEducationList(prevList => [...prevList, newListItem])
+
+  const deleteEducation = (id) => setEducationList(prevList => prevList.filter(item => item.id !== id))
 
   return (
     <>
       <Sidebar
         personalInfo={personalInfo}
         handlePersonalInfoChange={handlePersonalInfoChange}
-        addToList={addToList}
+        addEducation={addEducation}
+        deleteEducation={deleteEducation}
       />
-      <CVRender personalInfo={personalInfo} educationList={educationList} />
+      <CVRender personalInfo={personalInfo} educationList={educationList} deleteEducation={deleteEducation} />
     </>
   );
 }

@@ -4,7 +4,7 @@ import PersonalInfoForm from "./PersonalInfo"
 import EducationForm from "./Education"
 // import WorkForm from "./WorkExperience"
 
-export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToList }) {
+export default function Sidebar({ personalInfo, handlePersonalInfoChange, addEducation, deleteEducation }) {
 
     const [educationFormData, setEducationFormData] = useState({
         id: "",
@@ -15,7 +15,7 @@ export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToL
         location: ""
       });
 
-      const handleEducationChange = (e) => {
+      const handleEducationFormChange = (e) => {
         const { name, value } = e.target;
         setEducationFormData((prevData) => ({ ...prevData, [name]: value }));
       };
@@ -23,7 +23,7 @@ export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToL
       const handleEducationFormSubmit = (e) => {
         e.preventDefault()
         const newId = Math.floor(Math.random() * 1000)
-        addToList({...educationFormData, id: newId})
+        addEducation({...educationFormData, id: newId})
         setEducationFormData({ // research better ways to reset state
             id: "",
             school: "",
@@ -43,7 +43,7 @@ export default function Sidebar({ personalInfo, handlePersonalInfoChange, addToL
           />
         </Section>
         <Section title="Education">
-          <EducationForm formData={educationFormData} handleChange={handleEducationChange} handleSubmit={handleEducationFormSubmit} />
+          <EducationForm formData={educationFormData} handleChange={handleEducationFormChange} handleSubmit={handleEducationFormSubmit} />
         </Section>
       </div>
     )
