@@ -41,8 +41,18 @@ export default function Sidebar({
     });
   };
 
+  const fillOutEditForm = (id) => {
+    const itemToEdit = educationList.find((item) => (item.id = id));
+    setEducationFormData(itemToEdit);
+  };
+
   const listBlockElements = educationList.map((listItem) => (
-    <ListBlock key={listItem.id} listItem={listItem} deleteEducation={deleteEducation} />
+    <ListBlock
+      key={listItem.id}
+      listItem={listItem}
+      deleteEducation={deleteEducation}
+      editEducation={fillOutEditForm}
+    />
   ));
 
   return (
