@@ -1,4 +1,4 @@
-export default function EducationForm({ formData, handleChange, handleSubmit }) {
+export default function EducationForm({ formData, handleChange, handleSubmit, isEditing }) {
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function EducationForm({ formData, handleChange, handleSubmit }) 
             placeholder="Enter Location"
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">{isEditing ? "Save" : "Submit"}</button>
       </form>
     </>
   );

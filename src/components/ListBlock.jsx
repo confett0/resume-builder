@@ -1,4 +1,4 @@
-export default function ListBlock({listItem, deleteEducation, editEducation }) {
+export default function ListBlock({listItem, deleteEducation, editEducation, isEditing }) {
     return (
         <div className="list-block">
             <h3>{listItem.title}</h3>

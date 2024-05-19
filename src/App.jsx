@@ -50,6 +50,7 @@ function App() {
         educationList={educationList}
         addEducation={addEducation}
         deleteEducation={deleteEducation}
+        editEducation={editEducation}
       />
       <CVRender
         personalInfo={personalInfo}
