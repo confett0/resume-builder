@@ -3,7 +3,7 @@ import Section from "./Section";
 import PersonalInfoForm from "./PersonalInfo";
 import EducationForm from "./Education";
 import ListBlock from "./ListBlock";
-// import WorkForm from "./WorkExperience"
+import WorkForm from "./WorkExperience";
 
 export default function Sidebar({
   personalInfo,
@@ -11,7 +11,9 @@ export default function Sidebar({
   handlePersonalInfoChange,
   addEducation,
   deleteEducation,
-  editEducation
+  editEducation,
+  workList,
+  addWorkExperience,
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -22,7 +24,17 @@ export default function Sidebar({
     location: "",
   });
 
-  const [isEditingEducation, setIsEditingEducation] = useState(false)
+  const [workFormData, setWorkFormData] = useState({
+    id: "",
+    company: "",
+    positionTitle: "",
+    startDate: "",
+    endDate: "",
+    location: "",
+    description: "",
+  });
+
+  const [isEditingEducation, setIsEditingEducation] = useState(false);
 
   // Education
 
@@ -34,11 +46,11 @@ export default function Sidebar({
   const handleEducationFormSubmit = (e) => {
     e.preventDefault();
     if (isEditingEducation) {
-      editEducation(educationFormData.id, educationFormData)
-      setIsEditingEducation(false)
+      editEducation(educationFormData.id, educationFormData);
+      setIsEditingEducation(false);
     } else {
-    const newId = Math.floor(Math.random() * 1000);
-    addEducation({ ...educationFormData, id: newId });
+      const newId = Math.floor(Math.random() * 10000);
+      addEducation({ ...educationFormData, id: newId });
     }
     setEducationFormData({
       id: "",
@@ -47,13 +59,13 @@ export default function Sidebar({
       startDate: "",
       endDate: "",
       location: "",
-    })
-  }
+    });
+  };
 
   const fillOutEditEducationForm = (id) => {
     const itemToEdit = educationList.find((item) => (item.id = id));
     setEducationFormData(itemToEdit);
-    setIsEditingEducation(true)
+    setIsEditingEducation(true);
   };
 
   const educationBlockElements = educationList.map((listItem) => (
@@ -66,6 +78,31 @@ export default function Sidebar({
   ));
 
   // Work experience
+
+  const handleWorkFormChange = (e) => {
+    const { name, value } = e.target;
+    setWorkFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleWorkFormSubmit = (e) => {
+    e.preventDefault();
+    /* if (isEditingEducation) {
+      editEducation(educationFormData.id, educationFormData)
+      setIsEditingEducation(false)
+    } else { */
+    const newId = Math.floor(Math.random() * 10000);
+    addWorkExperience({ ...workFormData, id: newId });
+    // }
+    setWorkFormData({
+      id: "",
+      company: "",
+      positionTitle: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+      description: "",
+    });
+  };
 
   return (
     <div className="sidebar">
@@ -83,6 +120,13 @@ export default function Sidebar({
           isEditing={isEditingEducation}
         />
         {educationBlockElements}
+      </Section>
+      <Section title="Work experience">
+        <WorkForm
+          formData={workFormData}
+          handleChange={handleWorkFormChange}
+          handleSubmit={handleWorkFormSubmit}
+        />
       </Section>
     </div>
   );
