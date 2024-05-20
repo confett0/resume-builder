@@ -22,7 +22,9 @@ export default function Sidebar({
     location: "",
   });
 
-  const [isEditing, setIsEditing] = useState(false)
+  const [isEditingEducation, setIsEditingEducation] = useState(false)
+
+  // Education
 
   const handleEducationFormChange = (e) => {
     const { name, value } = e.target;
@@ -31,15 +33,14 @@ export default function Sidebar({
 
   const handleEducationFormSubmit = (e) => {
     e.preventDefault();
-    if (isEditing) {
+    if (isEditingEducation) {
       editEducation(educationFormData.id, educationFormData)
-      setIsEditing(false)
+      setIsEditingEducation(false)
     } else {
     const newId = Math.floor(Math.random() * 1000);
     addEducation({ ...educationFormData, id: newId });
     }
     setEducationFormData({
-      // to do: research better ways to reset state
       id: "",
       school: "",
       title: "",
@@ -49,21 +50,22 @@ export default function Sidebar({
     })
   }
 
-  const fillOutEditForm = (id) => {
+  const fillOutEditEducationForm = (id) => {
     const itemToEdit = educationList.find((item) => (item.id = id));
     setEducationFormData(itemToEdit);
-    setIsEditing(true)
+    setIsEditingEducation(true)
   };
 
-  const listBlockElements = educationList.map((listItem) => (
+  const educationBlockElements = educationList.map((listItem) => (
     <ListBlock
       key={listItem.id}
       listItem={listItem}
       deleteEducation={deleteEducation}
-      editEducation={fillOutEditForm}
-      isEditing={isEditing}
+      editEducation={fillOutEditEducationForm}
     />
   ));
+
+  // Work experience
 
   return (
     <div className="sidebar">
@@ -78,9 +80,9 @@ export default function Sidebar({
           formData={educationFormData}
           handleChange={handleEducationFormChange}
           handleSubmit={handleEducationFormSubmit}
-          isEditing={isEditing}
+          isEditing={isEditingEducation}
         />
-        {listBlockElements}
+        {educationBlockElements}
       </Section>
     </div>
   );

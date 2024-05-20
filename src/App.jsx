@@ -13,7 +13,7 @@ function App() {
 
   const [educationList, setEducationList] = useState([]);
 
-  console.log(educationList);
+  // Personal Info
 
   const handlePersonalInfoChange = (e) => {
     setPersonalInfo({
@@ -21,6 +21,8 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
+
+  // Education
 
   const addEducation = (newListItem) =>
     setEducationList((prevList) => [...prevList, newListItem]);
@@ -42,6 +44,8 @@ function App() {
     setEducationList(newEducationList);
   };
 
+  // Work
+
   return (
     <>
       <Sidebar
@@ -55,7 +59,6 @@ function App() {
       <CVRender
         personalInfo={personalInfo}
         educationList={educationList}
-        deleteEducation={deleteEducation}
       />
     </>
   );
