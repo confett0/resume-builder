@@ -19,8 +19,8 @@ export default function WorkForm({
         <label>
           Position Title:
           <input
-            value={formData.positionTitle}
-            name="positionTitle"
+            value={formData.title}
+            name="title"
             onChange={handleChange}
             placeholder="Enter Position Title"
           />

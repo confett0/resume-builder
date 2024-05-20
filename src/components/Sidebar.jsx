@@ -2,7 +2,7 @@ import { useState } from "react";
 import Section from "./Section";
 import PersonalInfoForm from "./PersonalInfo";
 import EducationForm from "./Education";
-import ListBlock from "./ListBlock";
+import ExperienceTabList from "./ExperienceTab";
 import WorkForm from "./WorkExperience";
 
 export default function Sidebar({
@@ -14,7 +14,7 @@ export default function Sidebar({
   editEducation,
   workList,
   addWorkExperience,
-  deleteWorkExperience
+  deleteWorkExperience,
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -28,7 +28,7 @@ export default function Sidebar({
   const [workFormData, setWorkFormData] = useState({
     id: "",
     company: "",
-    positionTitle: "",
+    title: "",
     startDate: "",
     endDate: "",
     location: "",
@@ -69,15 +69,6 @@ export default function Sidebar({
     setIsEditingEducation(true);
   };
 
-  const educationBlockElements = educationList.map((listItem) => (
-    <ListBlock
-      key={listItem.id}
-      listItem={listItem}
-      deleteEducation={deleteEducation}
-      editEducation={fillOutEditEducationForm}
-    />
-  ));
-
   // Work experience
 
   const handleWorkFormChange = (e) => {
@@ -97,7 +88,7 @@ export default function Sidebar({
     setWorkFormData({
       id: "",
       company: "",
-      positionTitle: "",
+      title: "",
       startDate: "",
       endDate: "",
       location: "",
@@ -120,7 +111,11 @@ export default function Sidebar({
           handleSubmit={handleEducationFormSubmit}
           isEditing={isEditingEducation}
         />
-        {educationBlockElements}
+        <ExperienceTabList
+          experienceList={educationList}
+          deleteExperience={deleteEducation}
+          editExperience={fillOutEditEducationForm}
+        />
       </Section>
       <Section title="Work experience">
         <WorkForm
