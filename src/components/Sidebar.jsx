@@ -15,6 +15,7 @@ export default function Sidebar({
   workList,
   addWorkExperience,
   deleteWorkExperience,
+  editWorkExperience
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -36,6 +37,7 @@ export default function Sidebar({
   });
 
   const [isEditingEducation, setIsEditingEducation] = useState(false);
+  const [isEditingWork, setIsEditingWork] = useState(false);
 
   // Education
 
@@ -78,13 +80,13 @@ export default function Sidebar({
 
   const handleWorkFormSubmit = (e) => {
     e.preventDefault();
-    /* if (isEditingEducation) {
-      editEducation(educationFormData.id, educationFormData)
-      setIsEditingEducation(false)
-    } else { */
+    if (isEditingWork) {
+      editWorkExperience(workFormData.id, workFormData)
+      setIsEditingWork(false)
+    } else { 
     const newId = Math.floor(Math.random() * 10000);
     addWorkExperience({ ...workFormData, id: newId });
-    // }
+     }
     setWorkFormData({
       id: "",
       company: "",
@@ -94,6 +96,12 @@ export default function Sidebar({
       location: "",
       description: "",
     });
+  };
+
+  const fillOutEditWorkForm = (id) => {
+    const itemToEdit = workList.find((item) => (item.id = id));
+    setWorkFormData(itemToEdit);
+    setIsEditingWork(true);
   };
 
   return (
@@ -122,6 +130,12 @@ export default function Sidebar({
           formData={workFormData}
           handleChange={handleWorkFormChange}
           handleSubmit={handleWorkFormSubmit}
+          isEditing={isEditingWork}
+        />
+        <ExperienceTabList
+          experienceList={workList}
+          deleteExperience={deleteWorkExperience}
+          editExperience={fillOutEditWorkForm}
         />
       </Section>
     </div>

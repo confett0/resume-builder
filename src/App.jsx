@@ -55,6 +55,20 @@ function App() {
   const deleteWorkExperience = (id) =>
     setWorkExperienceList((prevList) => prevList.filter((item) => item.id !== id));
 
+  const editWorkExperience = (id, newWorkObj) => {
+    const newWorkList = workExperienceList.map((item) => {
+      if (item.id === id) {
+        return {
+          ...newWorkObj,
+          id: id,
+        };
+      } else {
+        return item;
+      }
+    });
+    setWorkExperienceList(newWorkList);
+  };
+
   return (
     <>
       <Sidebar
@@ -67,6 +81,7 @@ function App() {
         workList={workExperienceList}
         addWorkExperience={addWorkExperience}
         deleteWorkExperience={deleteWorkExperience}
+        editWorkExperience={editWorkExperience}
       />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
