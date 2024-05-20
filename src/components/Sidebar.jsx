@@ -14,6 +14,7 @@ export default function Sidebar({
   editEducation,
   workList,
   addWorkExperience,
+  deleteWorkExperience
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
