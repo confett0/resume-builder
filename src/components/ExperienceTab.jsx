@@ -6,9 +6,9 @@ export default function ExperienceTabList({
   const experienceTabElements = experienceList.map((experience) => (
 
     <ExperienceTab
-      key={experience.id}
-      id={experience.id}
-      title={experience.title}
+      key={experience.id || experience}
+      id={experience.id || experience}
+      title={experience.title || experience}
       // location={}
       del={deleteExperience}
       edit={editExperience}

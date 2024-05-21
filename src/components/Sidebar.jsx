@@ -160,6 +160,9 @@ export default function Sidebar({
           handleChange={handleSkillFormChange}
           handleSubmit={handleSkillFormSubmit}
         />
+        <ExperienceTabList
+          experienceList={skills}
+        />
       </Section>
     </div>
   );
