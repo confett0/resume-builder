@@ -18,7 +18,7 @@ export default function Sidebar({
   deleteWorkExperience,
   editWorkExperience,
   skills,
-  addSkill
+  addSkill,
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -38,6 +38,8 @@ export default function Sidebar({
     location: "",
     description: "",
   });
+
+  const [skillFormData, setSkillFormData] = useState("");
 
   const [isEditingEducation, setIsEditingEducation] = useState(false);
   const [isEditingWork, setIsEditingWork] = useState(false);
@@ -84,12 +86,12 @@ export default function Sidebar({
   const handleWorkFormSubmit = (e) => {
     e.preventDefault();
     if (isEditingWork) {
-      editWorkExperience(workFormData.id, workFormData)
-      setIsEditingWork(false)
-    } else { 
-    const newId = Math.floor(Math.random() * 10000);
-    addWorkExperience({ ...workFormData, id: newId });
-     }
+      editWorkExperience(workFormData.id, workFormData);
+      setIsEditingWork(false);
+    } else {
+      const newId = Math.floor(Math.random() * 10000);
+      addWorkExperience({ ...workFormData, id: newId });
+    }
     setWorkFormData({
       id: "",
       company: "",
@@ -109,10 +111,13 @@ export default function Sidebar({
 
   // Skills
 
+  const handleSkillFormChange = (e) => setSkillFormData(e.target.value);
+
   const handleSkillFormSubmit = (e, skill) => {
-    e.preventDefault()
-    addSkill(skill)
-  }
+    e.preventDefault();
+    addSkill(skill);
+    setSkillFormData("")
+  };
 
   return (
     <div className="sidebar">
@@ -149,7 +154,12 @@ export default function Sidebar({
         />
       </Section>
       <Section title="Skills">
-        <SkillForm skills={skills} handleSubmit={handleSkillFormSubmit} />
+        <SkillForm
+          skills={skills}
+          formData={skillFormData}
+          handleChange={handleSkillFormChange}
+          handleSubmit={handleSkillFormSubmit}
+        />
       </Section>
     </div>
   );

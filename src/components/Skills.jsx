@@ -1,16 +1,13 @@
-import { useState } from "react"
-
-export default function SkillForm({handleSubmit}) {
-    const [skillFormData, setSkillFormData] = useState("")
-    const handleChange = (e) => setSkillFormData(e.target.value)
-
-    return (
-        <form onSubmit={(e) => handleSubmit(e, skillFormData)}>
-        <input value={skillFormData}
+export default function SkillForm({ formData, handleChange, handleSubmit }) {
+  return (
+    <form onSubmit={(e) => handleSubmit(e, formData)}>
+      <input
+        value={formData}
         name="skill"
         onChange={handleChange}
-        placeholder="Enter skill"/>
-        <button type="submit">Enter</button>
-        </form>
-    )
+        placeholder="Enter skill"
+      />
+      <button type="submit">Enter</button>
+    </form>
+  );
 }
