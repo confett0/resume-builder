@@ -4,7 +4,6 @@ export default function ExperienceTabList({
   editExperience,
 }) {
   const experienceTabElements = experienceList.map((experience) => (
-
     <ExperienceTab
       key={experience.id || experience}
       id={experience.id || experience}

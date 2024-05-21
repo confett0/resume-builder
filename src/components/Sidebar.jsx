@@ -19,6 +19,7 @@ export default function Sidebar({
   editWorkExperience,
   skills,
   addSkill,
+  deleteSkill
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -162,6 +163,7 @@ export default function Sidebar({
         />
         <ExperienceTabList
           experienceList={skills}
+          deleteExperience={deleteSkill}
         />
       </Section>
     </div>

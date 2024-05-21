@@ -73,6 +73,7 @@ function App() {
   // Skills
 
   const addSkill = (newSkill) => setSkills(prevSkills => [...prevSkills, newSkill])
+  const deleteSkill = (id) => setSkills(prevSkills => prevSkills.filter(skill => skill !== id))
 
   return (
     <>
@@ -89,6 +90,7 @@ function App() {
         editWorkExperience={editWorkExperience}
         skills={skills}
         addSkill={addSkill}
+        deleteSkill={deleteSkill}
       />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
