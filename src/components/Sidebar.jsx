@@ -4,6 +4,7 @@ import PersonalInfoForm from "./PersonalInfo";
 import EducationForm from "./Education";
 import ExperienceTabList from "./ExperienceTab";
 import WorkForm from "./WorkExperience";
+import SkillForm from "./Skills";
 
 export default function Sidebar({
   personalInfo,
@@ -15,7 +16,9 @@ export default function Sidebar({
   workList,
   addWorkExperience,
   deleteWorkExperience,
-  editWorkExperience
+  editWorkExperience,
+  skills,
+  addSkill
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -104,6 +107,13 @@ export default function Sidebar({
     setIsEditingWork(true);
   };
 
+  // Skills
+
+  const handleSkillFormSubmit = (e, skill) => {
+    e.preventDefault()
+    addSkill(skill)
+  }
+
   return (
     <div className="sidebar">
       <Section title="Personal Info">
@@ -137,6 +147,9 @@ export default function Sidebar({
           deleteExperience={deleteWorkExperience}
           editExperience={fillOutEditWorkForm}
         />
+      </Section>
+      <Section title="Skills">
+        <SkillForm skills={skills} handleSubmit={handleSkillFormSubmit} />
       </Section>
     </div>
   );

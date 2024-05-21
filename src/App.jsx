@@ -13,8 +13,9 @@ function App() {
 
   const [educationList, setEducationList] = useState([]);
   const [workExperienceList, setWorkExperienceList] = useState([]);
+  const [skills, setSkills] = useState([])
 
-  console.log(workExperienceList)
+  console.log(skills)
 
   // Personal Info
 
@@ -69,6 +70,10 @@ function App() {
     setWorkExperienceList(newWorkList);
   };
 
+  // Skills
+
+  const addSkill = (newSkill) => setSkills(prevSkills => [...prevSkills, newSkill])
+
   return (
     <>
       <Sidebar
@@ -82,6 +87,8 @@ function App() {
         addWorkExperience={addWorkExperience}
         deleteWorkExperience={deleteWorkExperience}
         editWorkExperience={editWorkExperience}
+        skills={skills}
+        addSkill={addSkill}
       />
       <CVRender personalInfo={personalInfo} educationList={educationList} />
     </>
