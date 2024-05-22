@@ -22,7 +22,7 @@ function ExperienceTab({ title, location, id, del, edit }) {
       <h3>{title}</h3>
 
       <button onClick={() => del(id)}>Delete</button>
-      <button onClick={() => edit(id)}>Edit</button>
+      {edit && <button onClick={() => edit(id)}>Edit</button>}
     </div>
   );
 }

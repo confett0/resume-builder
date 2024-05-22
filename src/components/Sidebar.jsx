@@ -72,7 +72,7 @@ export default function Sidebar({
   };
 
   const fillOutEditEducationForm = (id) => {
-    const itemToEdit = educationList.find((item) => (item.id = id));
+    const itemToEdit = educationList.find((item) => (item.id === id));
     setEducationFormData(itemToEdit);
     setIsEditingEducation(true);
   };
@@ -105,7 +105,7 @@ export default function Sidebar({
   };
 
   const fillOutEditWorkForm = (id) => {
-    const itemToEdit = workList.find((item) => (item.id = id));
+    const itemToEdit = workList.find((item) => (item.id === id));
     setWorkFormData(itemToEdit);
     setIsEditingWork(true);
   };
@@ -116,8 +116,8 @@ export default function Sidebar({
 
   const handleSkillFormSubmit = (e, skill) => {
     e.preventDefault();
-    addSkill(skill);
-    setSkillFormData("")
+      addSkill(skill);
+     setSkillFormData("")
   };
 
   return (
@@ -160,7 +160,7 @@ export default function Sidebar({
           formData={skillFormData}
           handleChange={handleSkillFormChange}
           handleSubmit={handleSkillFormSubmit}
-        />
+          />
         <ExperienceTabList
           experienceList={skills}
           deleteExperience={deleteSkill}
