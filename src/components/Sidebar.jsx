@@ -122,6 +122,8 @@ export default function Sidebar({
 
   return (
     <div className="sidebar">
+      <h1 style={{color: "#fff"}}>Logo</h1>
+      <p className="instructions">Create your CV by filling out the forms below! Your CV will be dynamically updated in the preview.</p>
       <Section title="Personal Info">
         <PersonalInfoForm
           personalInfo={personalInfo}
