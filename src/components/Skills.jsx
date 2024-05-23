@@ -7,7 +7,7 @@ export default function SkillForm({ formData, handleChange, handleSubmit }) {
         onChange={handleChange}
         placeholder="Enter skill"
       />
-      <button type="submit">Enter</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }

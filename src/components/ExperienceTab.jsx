@@ -12,6 +12,7 @@ export default function ExperienceTabList({
       del={deleteExperience}
       edit={editExperience}
     />
+
   ));
   return <>{experienceTabElements}</>;
 }
@@ -19,10 +20,10 @@ export default function ExperienceTabList({
 function ExperienceTab({ title, organization, id, del, edit }) {
   return (
     <div className="experience-tab">
-      <h4>{title}</h4>
-      <p>{organization}</p>
-      <button onClick={() => del(id)}>Delete</button>
-      {edit && <button onClick={() => edit(id)}>Edit</button>}
+      <div><h4>{title}</h4>
+      <p>{organization}</p></div>
+      <button className="experience-button delete-button" onClick={() => del(id)}><img src="/delete.png" /></button>
+      {edit && <button className="experience-button" onClick={() => edit(id)}><img src="/edit.png" /></button>}
     </div>
   );
 }
