@@ -13,6 +13,7 @@ export default function CVRender({ personalInfo, educationList }) {
           <div key={education.id}>
             <h3>{education.school}</h3>
             <h4>{education.title}</h4>
+            <p>{education.startDate}</p>
           </div>
       ))}
       </ul>

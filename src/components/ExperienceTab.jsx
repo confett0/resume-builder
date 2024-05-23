@@ -8,7 +8,7 @@ export default function ExperienceTabList({
       key={experience.id || experience}
       id={experience.id || experience}
       title={experience.title || experience}
-      // location={}
+      organization={experience.school || experience.company}
       del={deleteExperience}
       edit={editExperience}
     />
@@ -16,11 +16,11 @@ export default function ExperienceTabList({
   return <>{experienceTabElements}</>;
 }
 
-function ExperienceTab({ title, location, id, del, edit }) {
+function ExperienceTab({ title, organization, id, del, edit }) {
   return (
     <div className="experience-tab">
       <h3>{title}</h3>
-
+      <p>{organization}</p>
       <button onClick={() => del(id)}>Delete</button>
       {edit && <button onClick={() => edit(id)}>Edit</button>}
     </div>

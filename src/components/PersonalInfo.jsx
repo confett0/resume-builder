@@ -12,6 +12,7 @@ export default function PersonalInfoForm({ personalInfo, handleChange }) {
         <label>
           Email:
           <input
+            type="email"
             value={personalInfo.email}
             name="email"
             onChange={handleChange}
