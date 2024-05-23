@@ -19,7 +19,7 @@ export default function ExperienceTabList({
 function ExperienceTab({ title, organization, id, del, edit }) {
   return (
     <div className="experience-tab">
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       <p>{organization}</p>
       <button onClick={() => del(id)}>Delete</button>
       {edit && <button onClick={() => edit(id)}>Edit</button>}

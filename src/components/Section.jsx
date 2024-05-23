@@ -2,11 +2,13 @@ import { useState } from "react";
 
 export default function Section({ title, children }) {
   const [isActive, setIsActive] = useState(false);
-  const toggleSection = () => setIsActive(isActive ? false : true);
+  const toggleSection = () => setIsActive(prevState => !prevState);
 
   return (
     <section className="panel">
-      <h3 onClick={toggleSection}>{title}</h3>
+      <button className="toggle-panel" type="button" onClick={toggleSection}>
+      {title}
+      <img src={isActive? "/up.png" : "/down.png"} /></button>
       {isActive ? <>{ children }</> : null}
     </section>
   );

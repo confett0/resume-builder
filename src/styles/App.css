@@ -32,25 +32,30 @@ body {
 }
 
 .panel {
-  border-radius: 4px;
+  border-radius: 7px;
   border: 1px solid #D5D8DE;
   background: #EBEBEB;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   justify-items: center;
   padding: 1rem 1.3rem;
   flex-shrink: 0;
 }
 
-.panel h3 {
+.toggle-panel {
+  background: #EBEBEB;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Montserrat Variable', sans-serif;
   font-size: 1rem;
-  font-weight: 400;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
 }
 
 label {
@@ -60,9 +65,14 @@ label {
 
 input, textarea {
   display: block;
+  font-family: 'Montserrat Variable', sans-serif;
   margin-bottom: 1rem;
   padding: 0.4rem 0;
   width: 100%;
+}
+
+.experience-tab p {
+  font-size: 0.8rem;
 }
 
 .CV-render {
