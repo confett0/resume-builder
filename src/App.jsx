@@ -86,7 +86,7 @@ function App() {
         addSkill={addSkill}
         deleteSkill={deleteSkill}
       />
-      <CVRender personalInfo={personalInfo} educationList={educationList} />
+      <CVRender personalInfo={personalInfo} educationList={educationList} workExperienceList={workExperienceList} />
     </>
   );
 }

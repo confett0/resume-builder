@@ -164,8 +164,17 @@ form button {
   text-align: center;
 }
 
+.CV-body h4 {
+  margin-bottom: 0.3rem;
+}
+
 .CV-item {
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.5rem;
   margin-bottom: 1.8rem;
+}
+
+.job-description {
+  margin-top: 0.8rem;
 }
