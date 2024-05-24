@@ -25,6 +25,16 @@ const sampleData = {
   ],
   workExperience: [
     {
+      id: "sample_06",
+      company: "Ministry of Magic",
+      title: "Minister for Magic",
+      startDate: "2019",
+      endDate: "Present",
+      location: "London",
+      description:
+        "Elected as the youngest Minister for Magic. Focused on modernizing the magical world and ensuring equality and justice for all magical beings."
+    },
+    {
       id: "sample_05",
       company: "Ministry of Magic, Department of Magical Law Enforcement",
       title: "Deputy Head",
@@ -60,8 +70,9 @@ const sampleData = {
     "Spellcasting",
     "Potion brewing",
     "Defensive magic",
-    "Advanced transfiguration",
-    "Charms",
+    "Transfiguration",
+    "Advanced charms",
+    "Leadership and team management"
   ],
 };
 

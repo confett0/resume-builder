@@ -8,7 +8,9 @@ function App() {
   const [personalInfo, setPersonalInfo] = useState(sampleData.personalData);
 
   const [educationList, setEducationList] = useState(sampleData.education);
-  const [workExperienceList, setWorkExperienceList] = useState(sampleData.workExperience);
+  const [workExperienceList, setWorkExperienceList] = useState(
+    sampleData.workExperience
+  );
   const [skills, setSkills] = useState(sampleData.skills);
 
   // Personal Info
@@ -48,7 +50,9 @@ function App() {
     setWorkExperienceList((prevList) => [...prevList, newWorkExperience]);
 
   const deleteWorkExperience = (id) =>
-    setWorkExperienceList((prevList) => prevList.filter((item) => item.id !== id));
+    setWorkExperienceList((prevList) =>
+      prevList.filter((item) => item.id !== id)
+    );
 
   const editWorkExperience = (id, newWorkObj) => {
     const newWorkList = workExperienceList.map((item) => {
@@ -66,8 +70,10 @@ function App() {
 
   // Skills
 
-  const addSkill = (newSkill) => setSkills(prevSkills => [...prevSkills, newSkill])
-  const deleteSkill = (id) => setSkills(prevSkills => prevSkills.filter(skill => skill !== id))
+  const addSkill = (newSkill) =>
+    setSkills((prevSkills) => [...prevSkills, newSkill]);
+  const deleteSkill = (id) =>
+    setSkills((prevSkills) => prevSkills.filter((skill) => skill !== id));
 
   return (
     <>
@@ -86,7 +92,12 @@ function App() {
         addSkill={addSkill}
         deleteSkill={deleteSkill}
       />
-      <CVRender personalInfo={personalInfo} educationList={educationList} workExperienceList={workExperienceList} />
+      <CVRender
+        personalInfo={personalInfo}
+        educationList={educationList}
+        workExperienceList={workExperienceList}
+        skills={skills}
+      />
     </>
   );
 }

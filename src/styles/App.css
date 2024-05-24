@@ -118,6 +118,7 @@ form button {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
   gap: 2rem;
   width: 65%;
   height: calc(65vw * 1.4);
@@ -151,7 +152,7 @@ form button {
 }
 
 .CV-body {
-  padding: 1rem 3rem;
+  padding: 1rem 3rem 3rem;
 }
 
 .CV-body h2 {
@@ -159,20 +160,29 @@ form button {
   color: #37006a;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
   padding: 0.3rem;
   text-align: center;
 }
 
 .CV-body h4 {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.CV-body ul {
+  columns: 2;
+  list-style-position: inside;
 }
 
 .CV-item {
   display: grid;
   grid-template-columns: 8rem 1fr;
   gap: 1.5rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.CV-item:last-child {
+  margin-bottom: 2.4rem;
 }
 
 .job-description {
