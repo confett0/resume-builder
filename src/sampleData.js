@@ -12,6 +12,7 @@ const sampleData = {
       title: "Nastily Exhausting Wizarding Tests (NEWTs)",
       startDate: "1995",
       endDate: "1997",
+      location: "Hogwarts Castle"
     },
     {
       id: "sample_02",
@@ -19,6 +20,7 @@ const sampleData = {
       title: "Ordinary Wizarding Levels (OWLs)",
       startDate: "1991",
       endDate: "1995",
+      location: "Hogwarts Castle"
     },
   ],
   workExperience: [

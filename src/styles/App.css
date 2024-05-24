@@ -124,7 +124,7 @@ form button {
 }
 
 .CV-header {
-  background-color: #470b7f;
+  background-color: #37006a;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -148,4 +148,24 @@ form button {
 .contact {
   display: flex;
   gap: 0.5rem;
+}
+
+.CV-body {
+  padding: 1rem 3rem;
+}
+
+.CV-body h2 {
+  background-color: #beabd0;
+  color: #37006a;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.CV-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.8rem;
 }

@@ -25,13 +25,18 @@ export default function CVRender({ personalInfo, educationList }) {
         </div>
       </div>
       <div className="CV-body">
-        <h2>Education</h2>
+        {educationList.length > 0 && <h2>Education</h2>}
         <ul>
           {educationList.map((education) => (
-            <div key={education.id}>
-              <h3>{education.school}</h3>
-              <h4>{education.title}</h4>
-              <p>{education.startDate}</p>
+            <div key={education.id} className="CV-item">
+              <div>
+                <p>{education.startDate} - {education.endDate}</p>
+                <p>{education.location}</p>
+              </div>
+              <div>
+                <h4>{education.school}</h4>
+                <p>{education.title}</p>
+              </div>
             </div>
           ))}
         </ul>
