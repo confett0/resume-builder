@@ -7,7 +7,6 @@
 #root {
   display: flex;
   width: 1280px;
-  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   gap: 3rem;
@@ -40,7 +39,6 @@ body {
   gap: 1.5rem;
   justify-items: center;
   padding: 1rem 1.6rem;
-  flex-shrink: 0;
 }
 
 .toggle-panel {
@@ -118,6 +116,36 @@ form button {
 
 .CV-render {
   background-color: #fff;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 65%;
+  height: calc(65vw * 1.4);
+}
+
+.CV-header {
+  background-color: #470b7f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 10rem;
+  text-align: center;
+}
+
+.CV-header h3 {
+  font-size: 2rem;
+}
+
+.contact-wrap {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contact {
+  display: flex;
+  gap: 0.5rem;
 }

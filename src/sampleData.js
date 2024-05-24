@@ -1,7 +1,7 @@
 const sampleData = {
   personalData: {
     fullName: "Hermione Granger",
-    email: "hermione.granger@ministryofmagic.gov.uk",
+    email: "h.granger@ministryofmagic.gov.uk",
     phoneNumber: "+44 20 7946 0958",
     location: "London, UK",
   },
