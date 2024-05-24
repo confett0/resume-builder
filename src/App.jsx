@@ -2,20 +2,14 @@ import { useState } from "react";
 import "./styles/App.css";
 import Sidebar from "./components/Sidebar";
 import CVRender from "./components/CVRender";
+import sampleData from "./sampleData";
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    location: "",
-  });
+  const [personalInfo, setPersonalInfo] = useState(sampleData.personalData);
 
-  const [educationList, setEducationList] = useState([]);
-  const [workExperienceList, setWorkExperienceList] = useState([]);
-  const [skills, setSkills] = useState([])
-
-  console.log(skills)
+  const [educationList, setEducationList] = useState(sampleData.education);
+  const [workExperienceList, setWorkExperienceList] = useState(sampleData.workExperience);
+  const [skills, setSkills] = useState(sampleData.skills);
 
   // Personal Info
 
