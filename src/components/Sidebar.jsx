@@ -19,7 +19,8 @@ export default function Sidebar({
   editWorkExperience,
   skills,
   addSkill,
-  deleteSkill
+  deleteSkill,
+  handleDownload
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -168,6 +169,9 @@ export default function Sidebar({
           deleteExperience={deleteSkill}
         />
       </Section>
+      <button type="button" onClick={handleDownload}>
+        Download as PDF
+      </button>
     </div>
   );
 }

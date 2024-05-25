@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./styles/App.css";
 import Sidebar from "./components/Sidebar";
 import CVRender from "./components/CVRender";
 import sampleData from "./sampleData";
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(sampleData.personalData);
@@ -12,6 +14,8 @@ function App() {
     sampleData.workExperience
   );
   const [skills, setSkills] = useState(sampleData.skills);
+
+  const printRef = useRef();
 
   // Personal Info
 
@@ -75,6 +79,23 @@ function App() {
   const deleteSkill = (id) =>
     setSkills((prevSkills) => prevSkills.filter((skill) => skill !== id));
 
+  // Download CV as PDF
+
+  const handleDownloadPDF = async () => {
+    const element = printRef.current;
+    const canvas = await html2canvas(element);
+    const data = canvas.toDataURL('image/png');
+
+    const pdf = new jsPDF();
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight =
+      (imgProperties.height * pdfWidth) / imgProperties.width;
+
+    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('print.pdf');
+  };
+
   return (
     <>
       <Sidebar
@@ -91,12 +112,14 @@ function App() {
         skills={skills}
         addSkill={addSkill}
         deleteSkill={deleteSkill}
+        handleDownload={handleDownloadPDF}
       />
       <CVRender
         personalInfo={personalInfo}
         educationList={educationList}
         workExperienceList={workExperienceList}
         skills={skills}
+        printRef={printRef}
       />
     </>
   );

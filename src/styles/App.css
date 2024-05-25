@@ -118,10 +118,10 @@ form button {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   gap: 2rem;
-  width: 65%;
-  height: calc(65vw * 1.4);
+  width: 210mm;
+  height: 297mm;
 }
 
 .CV-header {

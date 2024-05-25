@@ -1,6 +1,6 @@
-export default function CVRender({ personalInfo, educationList, workExperienceList, skills }) {
+export default function CVRender({ personalInfo, educationList, workExperienceList, skills, printRef }) {
   return (
-    <div className="CV-render">
+    <div className="CV-render" ref={printRef}>
       <div className="CV-header">
         <h3>{personalInfo.fullName}</h3>
         <div className="contact-wrap">
