@@ -25,6 +25,16 @@ body {
   width: 35%;
 }
 
+.logo {
+  color: #fff;
+  font-family: 'Josefin Sans Variable', sans-serif;
+  font-weight: 200;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
 .instructions {
   color: #fff;
   font-size: 1.2rem;
@@ -196,5 +206,9 @@ form button {
 
   .sidebar, .CV-render {
     width: 100%;
+  }
+
+  .CV-render {
+    aspect-ratio : 210 / 297;
   }
 }
