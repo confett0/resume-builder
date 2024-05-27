@@ -169,8 +169,17 @@ export default function Sidebar({
           deleteExperience={deleteSkill}
         />
       </Section>
-      <button type="button" onClick={handleDownload}>
+      <button type="button" className="utility-button" onClick={handleDownload}>
+        <img src="./printer.png"/>
         Download as PDF
+      </button>
+      <button type="button" className="utility-button" onClick={handleDownload}>
+        <img src="./sync.png"/>
+        Load sample CV
+      </button>
+      <button type="button" className="utility-button" onClick={handleDownload}>
+        <img src="./reset.png"/>
+        Delete data
       </button>
     </div>
   );

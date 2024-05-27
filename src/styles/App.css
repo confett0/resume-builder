@@ -124,6 +124,26 @@ form button {
   margin-right: 0.8rem;
 }
 
+.utility-button {
+  align-items: center;
+  background-color: #EBEBEB;
+  border: 1px solid #EBEBEB;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Montserrat Variable', sans-serif;
+  gap: 0.7rem;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  width: 14rem;
+}
+
+.utility-button:first-of-type {
+  margin-top: 2rem;
+}
+
+
 .CV-render {
   background-color: #fff;
   display: flex;
