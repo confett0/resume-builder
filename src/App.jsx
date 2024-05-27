@@ -2,19 +2,17 @@ import { useState, useRef } from "react";
 import "./styles/App.css";
 import Sidebar from "./components/Sidebar";
 import CVRender from "./components/CVRender";
-import sampleData from "./sampleData";
+import sampleData from "./styles/assets/sampleData";
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(sampleData.personalData);
-
   const [educationList, setEducationList] = useState(sampleData.education);
   const [workExperienceList, setWorkExperienceList] = useState(
     sampleData.workExperience
   );
   const [skills, setSkills] = useState(sampleData.skills);
-
   const printRef = useRef();
 
   // Personal Info
@@ -96,6 +94,29 @@ function App() {
     pdf.save('print.pdf');
   };
 
+  // Load sample CV 
+
+    const loadSampleCV = () => {
+      setPersonalInfo(sampleData.personalData)
+      setEducationList(sampleData.education)
+      setWorkExperienceList(sampleData.workExperience)
+      setSkills(sampleData.skills)
+    }
+
+  // Clear data 
+
+    const clearData = () => {
+      setPersonalInfo({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        location: "",
+      })
+      setEducationList([])
+      setWorkExperienceList([])
+      setSkills([])
+    }
+
   return (
     <>
       <Sidebar
@@ -113,6 +134,8 @@ function App() {
         addSkill={addSkill}
         deleteSkill={deleteSkill}
         handleDownload={handleDownloadPDF}
+        loadSampleCV={loadSampleCV}
+        clearData={clearData}
       />
       <CVRender
         personalInfo={personalInfo}

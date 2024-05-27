@@ -20,7 +20,9 @@ export default function Sidebar({
   skills,
   addSkill,
   deleteSkill,
-  handleDownload
+  handleDownload,
+  loadSampleCV,
+  clearData
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -173,11 +175,11 @@ export default function Sidebar({
         <img src="./printer.png"/>
         Download as PDF
       </button>
-      <button type="button" className="utility-button" onClick={handleDownload}>
+      <button type="button" className="utility-button" onClick={loadSampleCV}>
         <img src="./sync.png"/>
         Load sample CV
       </button>
-      <button type="button" className="utility-button" onClick={handleDownload}>
+      <button type="button" className="utility-button" onClick={clearData}>
         <img src="./reset.png"/>
         Delete data
       </button>
