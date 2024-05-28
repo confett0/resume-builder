@@ -4,7 +4,7 @@ This project is a small CV application created using React. It's designed to hel
 
 ## Demo
 
-[Live Demo]()
+[Live Demo](https://capable-dusk-eda372.netlify.app/)
 
 ## Project Screenshots
 
