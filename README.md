@@ -8,7 +8,7 @@ This project is a small CV application created using React. It's designed to hel
 
 ## Project Screenshots
 
-![Screenshot](./screenshot.png)
+![Screenshot](public/screenshot.png)
 
 ## Features
 
