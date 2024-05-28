@@ -1,4 +1,10 @@
-export default function CVRender({ personalInfo, educationList, workExperienceList, skills, printRef }) {
+export default function CVRender({
+  personalInfo,
+  educationList,
+  workExperienceList,
+  skills,
+  printRef,
+}) {
   return (
     <div className="CV-render" ref={printRef}>
       <div className="CV-header">
@@ -30,7 +36,9 @@ export default function CVRender({ personalInfo, educationList, workExperienceLi
           {educationList.map((education) => (
             <div key={education.id} className="CV-item">
               <div>
-                <p>{education.startDate} - {education.endDate}</p>
+                <p>
+                  {education.startDate} - {education.endDate}
+                </p>
                 <p>{education.location}</p>
               </div>
               <div>
@@ -45,7 +53,9 @@ export default function CVRender({ personalInfo, educationList, workExperienceLi
           {workExperienceList.map((job) => (
             <div key={job.id} className="CV-item">
               <div>
-                <p>{job.startDate} - {job.endDate}</p>
+                <p>
+                  {job.startDate} - {job.endDate}
+                </p>
                 <p>{job.location}</p>
               </div>
               <div>

@@ -3,8 +3,8 @@ import "./styles/App.css";
 import Sidebar from "./components/Sidebar";
 import CVRender from "./components/CVRender";
 import sampleData from "./styles/assets/sampleData";
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 function App() {
   const [personalInfo, setPersonalInfo] = useState(sampleData.personalData);
@@ -82,40 +82,39 @@ function App() {
   const handleDownloadPDF = async () => {
     const element = printRef.current;
     const canvas = await html2canvas(element);
-    const data = canvas.toDataURL('image/png');
+    const data = canvas.toDataURL("image/png");
 
     const pdf = new jsPDF();
     const imgProperties = pdf.getImageProperties(data);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight =
-      (imgProperties.height * pdfWidth) / imgProperties.width;
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
 
-    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('print.pdf');
+    pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("print.pdf");
   };
 
-  // Load sample CV 
+  // Load sample CV
 
-    const loadSampleCV = () => {
-      setPersonalInfo(sampleData.personalData)
-      setEducationList(sampleData.education)
-      setWorkExperienceList(sampleData.workExperience)
-      setSkills(sampleData.skills)
-    }
+  const loadSampleCV = () => {
+    setPersonalInfo(sampleData.personalData);
+    setEducationList(sampleData.education);
+    setWorkExperienceList(sampleData.workExperience);
+    setSkills(sampleData.skills);
+  };
 
-  // Clear data 
+  // Clear data
 
-    const clearData = () => {
-      setPersonalInfo({
-        fullName: "",
-        email: "",
-        phoneNumber: "",
-        location: "",
-      })
-      setEducationList([])
-      setWorkExperienceList([])
-      setSkills([])
-    }
+  const clearData = () => {
+    setPersonalInfo({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      location: "",
+    });
+    setEducationList([]);
+    setWorkExperienceList([]);
+    setSkills([]);
+  };
 
   return (
     <>

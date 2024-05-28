@@ -22,7 +22,7 @@ export default function Sidebar({
   deleteSkill,
   handleDownload,
   loadSampleCV,
-  clearData
+  clearData,
 }) {
   const [educationFormData, setEducationFormData] = useState({
     id: "",
@@ -75,7 +75,7 @@ export default function Sidebar({
   };
 
   const fillOutEditEducationForm = (id) => {
-    const itemToEdit = educationList.find((item) => (item.id === id));
+    const itemToEdit = educationList.find((item) => item.id === id);
     setEducationFormData(itemToEdit);
     setIsEditingEducation(true);
   };
@@ -108,7 +108,7 @@ export default function Sidebar({
   };
 
   const fillOutEditWorkForm = (id) => {
-    const itemToEdit = workList.find((item) => (item.id === id));
+    const itemToEdit = workList.find((item) => item.id === id);
     setWorkFormData(itemToEdit);
     setIsEditingWork(true);
   };
@@ -119,14 +119,19 @@ export default function Sidebar({
 
   const handleSkillFormSubmit = (e, skill) => {
     e.preventDefault();
-      addSkill(skill);
-     setSkillFormData("")
+    addSkill(skill);
+    setSkillFormData("");
   };
 
   return (
     <div className="sidebar">
-      <h1 className="logo"><span>resum</span>easy</h1>
-      <p className="instructions">Create your CV by filling out the forms below! Your CV will be dynamically updated in the preview.</p>
+      <h1 className="logo">
+        <span>resum</span>easy
+      </h1>
+      <p className="instructions">
+        Create your CV by filling out the forms below! Your CV will be
+        dynamically updated in the preview.
+      </p>
       <Section title="Personal Info">
         <PersonalInfoForm
           personalInfo={personalInfo}
@@ -165,22 +170,22 @@ export default function Sidebar({
           formData={skillFormData}
           handleChange={handleSkillFormChange}
           handleSubmit={handleSkillFormSubmit}
-          />
+        />
         <ExperienceTabList
           experienceList={skills}
           deleteExperience={deleteSkill}
         />
       </Section>
       <button type="button" className="utility-button" onClick={handleDownload}>
-        <img src="./printer.png"/>
+        <img src="./printer.png" />
         Download as PDF
       </button>
       <button type="button" className="utility-button" onClick={loadSampleCV}>
-        <img src="./sync.png"/>
+        <img src="./sync.png" />
         Load sample CV
       </button>
       <button type="button" className="utility-button" onClick={clearData}>
-        <img src="./reset.png"/>
+        <img src="./reset.png" />
         Delete data
       </button>
     </div>
